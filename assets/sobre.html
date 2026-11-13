@@ -1,0 +1,816 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfólio | Victória Lago Brunini</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* CONFIGURAÇÕES GERAIS */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --roxo-escuro: #32134f;
+            --roxo: #7040a0;
+            --roxo-medio: #956bc0;
+            --lilas: #c7a9e8;
+            --lilas-claro: #eee4fa;
+            --fundo: #f8f5fc;
+            --texto: #5e536c;
+            --branco: #ffffff;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--fundo);
+            color: #352746;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* MENU */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid #eee5f7;
+            padding: 15px 7%;
+        }
+
+        .nav-content {
+            max-width: 1250px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--roxo-escuro);
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--roxo-medio);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--texto);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--roxo);
+        }
+
+        /* CAPA */
+
+        .hero {
+            min-height: 540px;
+            padding: 100px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at 15% 20%, #ffffff 0%, transparent 25%),
+                radial-gradient(circle at 85% 80%, #d6bcec 0%, transparent 35%),
+                linear-gradient(135deg, #e9dafa, #f8f3ff, #d8c1f0);
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            border: 1px solid rgba(112, 64, 160, 0.16);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::before {
+            width: 350px;
+            height: 350px;
+            top: -170px;
+            left: -100px;
+        }
+
+        .hero::after {
+            width: 450px;
+            height: 450px;
+            bottom: -250px;
+            right: -100px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            position: relative;
+            z-index: 2;
+            animation: aparecer 1s ease;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.8);
+            color: var(--roxo);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--roxo-escuro);
+            font-size: clamp(2.7rem, 6vw, 5rem);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--roxo);
+        }
+
+        .hero p {
+            color: var(--texto);
+            font-size: 1.15rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            padding: 14px 30px;
+            background: var(--roxo-escuro);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background: var(--roxo);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(112, 64, 160, 0.2);
+        }
+
+        /* CONTEÚDO PRINCIPAL */
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 50px 25px;
+        }
+
+        section {
+            background: var(--branco);
+            margin-bottom: 35px;
+            padding: 45px;
+            border-radius: 30px;
+            box-shadow: 0 8px 35px rgba(74, 39, 107, 0.06);
+            border: 1px solid #f0e8f8;
+            transition: box-shadow 0.3s ease;
+            scroll-margin-top: 100px;
+        }
+
+        section:hover {
+            box-shadow: 0 12px 40px rgba(74, 39, 107, 0.11);
+        }
+
+        .section-label {
+            color: var(--roxo-medio);
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--roxo-escuro);
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+
+        h3 {
+            color: var(--roxo);
+            font-size: 1.3rem;
+            margin: 30px 0 15px;
+        }
+
+        p {
+            color: var(--texto);
+            margin-top: 18px;
+        }
+
+        /* GALERIA DE FOTOS */
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            margin: 30px 0;
+            align-items: stretch;
+        }
+
+        .galeria img {
+            display: block;
+            width: 100%;
+            height: 330px;
+
+            /* Faz a foto preencher todo o espaço */
+            object-fit: cover;
+            object-position: center;
+
+            /* Aparência das fotos */
+            padding: 0;
+            background: transparent;
+            border: 3px solid white;
+            border-radius: 35px;
+
+            box-shadow: 0 8px 22px rgba(74, 39, 107, 0.13);
+
+            transition: transform 0.4s ease,
+                        box-shadow 0.4s ease;
+        }
+
+        .galeria img:hover {
+            transform: translateY(-7px) scale(1.025);
+            box-shadow: 0 15px 30px rgba(74, 39, 107, 0.22);
+        }
+
+        /* LISTAS */
+
+        ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        li {
+            background: #f7f1fc;
+            padding: 13px 16px;
+            border-radius: 18px;
+            color: #5e536c;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        li::before {
+            content: "✦";
+            color: var(--roxo-medio);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        li:hover {
+            background: #eee2fa;
+            transform: translateX(4px);
+        }
+
+        /* BOTÕES */
+
+        .botao {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 13px 25px;
+            background: var(--roxo-escuro);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            background: var(--roxo);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(112, 64, 160, 0.2);
+        }
+
+        /* PLAYLIST */
+
+        .playlist {
+            background: linear-gradient(120deg, #f0e5fb, #faf7ff);
+            border: 1px solid #eee1fa;
+            border-radius: 25px;
+            padding: 35px;
+            text-align: center;
+        }
+
+        .playlist-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .playlist h3 {
+            margin-top: 0;
+            color: var(--roxo-escuro);
+        }
+
+        /* RODAPÉ */
+
+        footer {
+            background: var(--roxo-escuro);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer p {
+            color: #ddcbed;
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* ANIMAÇÃO */
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* TABLETS */
+
+        @media (max-width: 900px) {
+
+            .galeria {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            section {
+                padding: 35px;
+            }
+
+        }
+
+        /* CELULARES */
+
+        @media (max-width: 768px) {
+
+            .navbar {
+                padding: 14px 18px;
+            }
+
+            .nav-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 12px 18px;
+            }
+
+            .nav-links a {
+                font-size: 0.78rem;
+            }
+
+            .hero {
+                min-height: 430px;
+                padding: 75px 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .container {
+                padding: 25px 15px;
+            }
+
+            section {
+                padding: 25px 20px;
+                margin-bottom: 22px;
+                border-radius: 25px;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+            }
+
+            ul {
+                grid-template-columns: 1fr;
+            }
+
+            .galeria {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .galeria img {
+                width: 100%;
+                height: 350px;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 30px;
+            }
+
+            .botao {
+                text-align: center;
+                max-width: 100%;
+            }
+
+        }
+
+        /* CELULARES PEQUENOS */
+
+        @media (max-width: 380px) {
+
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links a {
+                font-size: 0.72rem;
+            }
+
+            section {
+                padding: 22px 16px;
+            }
+
+            .galeria img {
+                height: 300px;
+            }
+
+        }
+
+        /* ACESSIBILIDADE: REDUZ MOVIMENTOS */
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- MENU -->
+
+    <nav class="navbar">
+
+        <div class="nav-content">
+
+            <div class="logo">
+                VICTÓRIA<span>.</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="#inicio">Início</a>
+                <a href="#fotos">Sobre mim</a>
+                <a href="#curiosidades">Curiosidades</a>
+                <a href="#familia">Família</a>
+                <a href="#lugares">Viagens</a>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- CAPA -->
+
+    <header class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <span class="hero-tag">MEU PORTFÓLIO PESSOAL</span>
+
+            <h1>Olá, eu sou a <span>Victória!</span></h1>
+
+            <p>
+                Estudante, esportista e apaixonada por tecnologia.
+                Um pouquinho sobre minha história, minha família e tudo que faz parte de mim.
+            </p>
+
+            <a href="#fotos" class="hero-button">
+                Conheça minha história ↓
+            </a>
+
+        </div>
+
+    </header>
+
+    <main class="container">
+
+        <!-- SOBRE MIM -->
+
+        <section id="fotos">
+
+            <div class="section-label">Prazer, Victória!</div>
+
+            <h2>Um pouco sobre mim</h2>
+
+            <div class="galeria">
+
+                <img src="WhatsApp Image 2026-03-18 at 10.18.25.jpeg" alt="Foto da Victória">
+
+                <img src="WhatsApp Image 2026-05-22 at 08.31.35.jpeg" alt="Foto da Victória">
+
+                <img src="WhatsApp Image 2026-05-22 at 08.33.20.jpeg" alt="Foto da Victória">
+
+            </div>
+
+            <p>
+                Muito prazer, me chamo Victória Lago Brunini, tenho 15 anos
+                e faço aniversário no dia 21/09.
+            </p>
+
+        </section>
+
+        <!-- CURIOSIDADES -->
+
+        <section id="curiosidades">
+
+            <div class="section-label">Além da sala de aula</div>
+
+            <h2>Curiosidades sobre mim</h2>
+
+            <p>
+                Existem várias coisas que fazem parte da minha personalidade.
+                Aqui estão algumas curiosidades sobre mim!
+            </p>
+
+            <ul>
+                <li>Adoro cozinhar no tempo livre.</li>
+                <li>Jogo vôlei nas horas vagas.</li>
+                <li>Amo cuidar de crianças.</li>
+                <li>Tenho um afeto muito grande por animais.</li>
+                <li>Tenho 3 cachorros e 1 gatinho.</li>
+                <li>Sei pilotar moto, jet ski e quadriciclo.</li>
+                <li>Fazia ginástica artística quando era pequena.</li>
+                <li>Treino 5 vezes por semana.</li>
+                <li>Faço box 2 vezes por semana.</li>
+                <li>Sou faixa-roxa no jiu-jítsu.</li>
+                <li>Sou faixa azul no judô.</li>
+                <li>Moro com meus pais e meu irmão mais novo.</li>
+                <li>Sei andar de skate.</li>
+                <li>Quando tinha 10 anos fui campeã de natação no Allianz Park.</li>
+                <li>Desde os 11 anos toco bateria.</li>
+                <li>Sou apaixonada por esportes.</li>
+            </ul>
+
+            <a href="https://pt.wikipedia.org/wiki/Voleibol"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="botao">
+                Conheça mais sobre o vôlei →
+            </a>
+
+        </section>
+
+        <!-- FAMÍLIA -->
+
+        <section id="familia">
+
+            <div class="section-label">Meu maior carinho</div>
+
+            <h2>Minha família ❤️</h2>
+
+            <p>
+                Minha família é uma parte muito importante da minha vida.
+                Aqui estão algumas fotos das pessoas que estão sempre comigo.
+            </p>
+
+            <h3>Meus pais</h3>
+
+            <div class="galeria">
+
+                <img src="WhatsApp Image 2026-05-22 at 10.07.24.jpeg" alt="Foto dos meus pais">
+
+                <img src="WhatsApp Image 2026-05-22 at 10.08.32.jpeg" alt="Foto dos meus pais">
+
+            </div>
+
+            <h3>Meu irmão</h3>
+
+            <div class="galeria">
+
+                <img src="WhatsApp Image 2026-05-22 at 10.09.34.jpeg" alt="Foto do meu irmão">
+
+                <img src="WhatsApp Image 2026-05-22 at 10.48.38.jpeg" alt="Foto do meu irmão">
+
+            </div>
+
+        </section>
+
+        <!-- MÚSICAS -->
+
+        <section>
+
+            <div class="section-label">Minha trilha sonora</div>
+
+            <h2>Músicas que não saem do meu fone</h2>
+
+            <div class="playlist">
+
+                <div class="playlist-icon">🎧</div>
+
+                <h3>Um pouquinho do meu gosto musical</h3>
+
+                <p>
+                    Separei uma playlist com algumas das músicas
+                    que mais gosto de ouvir!
+                </p>
+
+                <a href="https://open.spotify.com/playlist/0IxykXnLslYgbj7XNwAtQ2?si=FN6ylQMcSXi8Y-nOjIKzIA"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="botao">
+                    Ouça minha playlist →
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- TECNOLOGIA -->
+
+        <section>
+
+            <div class="section-label">Minha vida acadêmica</div>
+
+            <h2>Matérias Tech favoritas</h2>
+
+            <p>
+                A tecnologia faz parte da minha rotina e estou sempre
+                aprendendo coisas novas nessa área.
+            </p>
+
+            <div class="galeria">
+
+                <img src="WhatsApp Image 2026-05-22 at 10.33.18.jpeg" alt="Matéria Tech favorita">
+
+                <img src="WhatsApp Image 2026-05-22 at 10.34.36.jpeg" alt="Matéria Tech favorita">
+
+            </div>
+
+        </section>
+
+        <!-- VIAGENS -->
+
+        <section id="lugares">
+
+            <div class="section-label">Conhecendo o mundo</div>
+
+            <h2>Lugares que já visitei</h2>
+
+            <ul>
+                <li>Maceió</li>
+                <li>Santa Catarina</li>
+                <li>Beto Carrero no meu aniversário de 10 anos</li>
+            </ul>
+
+            <p>
+                Apesar de eu não gostar de praia e nem de mar,
+                meus pais me fizeram entrar no mar e até um peixe me beliscou.
+            </p>
+
+            <h3>☀️ Maceió</h3>
+
+            <div class="galeria">
+
+                <img src="WhatsApp Image 2026-05-22 at 08.41.54.jpeg" alt="Viagem para Maceió">
+
+            </div>
+
+            <a href="https://pt.wikipedia.org/wiki/Macei%C3%B3"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="botao">
+                Saiba mais sobre Maceió →
+            </a>
+
+            <h3>🌿 Santa Catarina</h3>
+
+            <div class="galeria">
+
+                <img src="WhatsApp Image 2026-05-22 at 08.44.45.jpeg" alt="Viagem para Santa Catarina">
+
+            </div>
+
+            <a href="https://pt.wikipedia.org/wiki/Santa_Catarina"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="botao">
+                Saiba mais sobre Santa Catarina →
+            </a>
+
+        </section>
+
+        <!-- SONHOS -->
+
+        <section>
+
+            <div class="section-label">Próximos destinos</div>
+
+            <h2>Lugares que quero conhecer</h2>
+
+            <p>
+                Existem muitos lugares que ainda quero conhecer,
+                mas um dos meus maiores desejos é visitar a Itália!
+            </p>
+
+            <ul>
+                <li>Roma - Itália</li>
+                <li>Coliseu de Roma</li>
+            </ul>
+
+            <div class="galeria">
+
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Colosseo_2020.jpg"
+                     alt="Coliseu de Roma">
+
+            </div>
+
+            <a href="https://pt.wikipedia.org/wiki/Coliseu"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="botao">
+                Conheça o Coliseu de Roma →
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <p>Feito com carinho por <strong>Victória Lago Brunini</strong> 💜</p>
+
+        <p>© 2026 - Meu Portfólio Pessoal</p>
+
+    </footer>
+
+</body>
+
+</html>
