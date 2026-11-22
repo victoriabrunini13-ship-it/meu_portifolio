@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Portfólio - Victória</title>
+    <title>Meu Portfólio - Victória</title>
 
     <style>
+
+        /* Estilo geral */
 
         * {
             margin: 0;
@@ -15,14 +17,14 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: Arial, sans-serif;
             background-color: #f8f5fc;
             color: #352746;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         /* Menu */
@@ -35,7 +37,6 @@
             align-items: center;
             position: sticky;
             top: 0;
-            z-index: 10;
         }
 
         nav h2 {
@@ -52,7 +53,7 @@
             color: #956bc0;
         }
 
-        /* Apresentação */
+        /* Parte inicial */
 
         header {
             background-color: #e9dafa;
@@ -68,7 +69,6 @@
 
         header p {
             margin-bottom: 25px;
-            line-height: 1.6;
         }
 
         header span {
@@ -85,14 +85,13 @@
             border-radius: 20px;
             display: inline-block;
             margin-top: 15px;
-            transition: 0.3s;
         }
 
         .botao:hover {
             background-color: #956bc0;
         }
 
-        /* Conteúdo */
+        /* Partes do conteúdo */
 
         main {
             width: 90%;
@@ -129,22 +128,18 @@
         .fotos {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            align-items: flex-start;
             gap: 15px;
             margin: 20px 0;
         }
 
         .fotos img {
-            width: calc(33.33% - 10px);
-            max-width: 100%;
-            height: auto;
-            display: block;
-            object-fit: contain;
+            width: 30%;
+            height: 250px;
+            object-fit: cover;
             border-radius: 12px;
         }
 
-        /* Curiosidades */
+        /* Lista de curiosidades */
 
         ul {
             display: grid;
@@ -158,7 +153,6 @@
             background-color: #f3eafa;
             padding: 12px;
             border-radius: 10px;
-            line-height: 1.5;
         }
 
         /* Playlist */
@@ -187,27 +181,13 @@
             margin: 5px;
         }
 
-        /* Tablets */
-
-        @media (max-width: 900px) {
-
-            .fotos img {
-                width: calc(50% - 10px);
-            }
-
-        }
-
-        /* Celulares */
+        /* Celular e tablet */
 
         @media (max-width: 700px) {
 
             nav {
                 flex-direction: column;
                 gap: 15px;
-            }
-
-            nav div {
-                text-align: center;
             }
 
             nav a {
@@ -232,13 +212,9 @@
                 padding: 20px;
             }
 
-            .fotos {
-                gap: 15px;
-            }
-
             .fotos img {
                 width: 100%;
-                height: auto;
+                height: 280px;
             }
 
             ul {
@@ -252,6 +228,8 @@
 </head>
 
 <body>
+
+    <!-- Menu do portfólio -->
 
     <nav>
 
@@ -267,13 +245,15 @@
 
     </nav>
 
+    <!-- Apresentação -->
+
     <header id="inicio">
 
         <h1>Olá, eu sou a <span>Victória!</span></h1>
 
         <p>
-            Sou estudante, gosto muito de esportes e estou aprendendo cada vez mais sobre tecnologia.
-            Neste site, reuni algumas coisas sobre mim, minha família e minhas experiências.
+            Estudante, esportista e apaixonada por tecnologia.
+            Esse é um pouquinho sobre mim e sobre as coisas que fazem parte da minha vida.
         </p>
 
         <a href="#sobre" class="botao">Conheça um pouco mais</a>
@@ -282,58 +262,56 @@
 
     <main>
 
+        <!-- Sobre mim -->
+
         <section id="sobre">
 
             <h2>Um pouco sobre mim</h2>
 
             <div class="fotos">
 
-                <img src="assets/WhatsApp Image 2026-03-18 at 10.18.25.jpeg"
-                     alt="Foto da Victória"
-                     loading="lazy">
+                <img src="assets/WhatsApp Image 2026-03-18 at 10.18.25.jpeg" alt="Foto da Victória">
 
-                <img src="assets/WhatsApp Image 2026-05-22 at 08.31.35.jpeg"
-                     alt="Foto da Victória"
-                     loading="lazy">
+                <img src="assets/WhatsApp Image 2026-05-22 at 08.31.35.jpeg" alt="Foto da Victória">
 
-                <img src="assets/WhatsApp Image 2026-05-22 at 08.33.20.jpeg"
-                     alt="Foto da Victória"
-                     loading="lazy">
+                <img src="assets/WhatsApp Image 2026-05-22 at 08.33.20.jpeg" alt="Foto da Victória">
 
             </div>
 
             <p>
-                Meu nome é Victória Lago Brunini, tenho 16 anos e faço aniversário no dia 21 de setembro.
-                Gosto de conhecer coisas novas, praticar esportes e passar meu tempo com as pessoas que são importantes para mim.
+                Muito prazer, me chamo Victória Lago Brunini, tenho 15 anos
+                e faço aniversário no dia 21/09.
             </p>
 
         </section>
+
+        <!-- Curiosidades -->
 
         <section id="curiosidades">
 
             <h2>Curiosidades sobre mim</h2>
 
             <p>
-                Separei algumas curiosidades para contar um pouco mais sobre quem eu sou e o que gosto de fazer.
+                Algumas coisas que gosto de fazer e outras curiosidades sobre mim:
             </p>
 
             <ul>
-                <li>Gosto muito de cozinhar no meu tempo livre.</li>
+                <li>Adoro cozinhar no tempo livre.</li>
                 <li>Jogo vôlei nas horas vagas.</li>
-                <li>Gosto de cuidar de crianças.</li>
-                <li>Sou apaixonada por animais.</li>
-                <li>Tenho três cachorros e um gato.</li>
+                <li>Amo cuidar de crianças.</li>
+                <li>Gosto muito de animais.</li>
+                <li>Tenho 3 cachorros e 1 gatinho.</li>
                 <li>Sei pilotar moto, jet ski e quadriciclo.</li>
-                <li>Já fiz ginástica artística.</li>
-                <li>Treino cinco vezes por semana.</li>
-                <li>Faço boxe duas vezes por semana.</li>
+                <li>Fazia ginástica artística quando era pequena.</li>
+                <li>Treino 5 vezes por semana.</li>
+                <li>Faço boxe 2 vezes por semana.</li>
                 <li>Sou faixa-roxa no jiu-jítsu.</li>
                 <li>Sou faixa-azul no judô.</li>
                 <li>Moro com meus pais e meu irmão mais novo.</li>
                 <li>Sei andar de skate.</li>
-                <li>Quando tinha 10 anos, fui campeã de natação no Allianz Park.</li>
-                <li>Toco bateria desde os 11 anos.</li>
-                <li>Gosto muito de praticar esportes.</li>
+                <li>Quando tinha 10 anos fui campeã de natação no Allianz Park.</li>
+                <li>Desde os 11 anos toco bateria.</li>
+                <li>Sou apaixonada por esportes.</li>
             </ul>
 
             <a href="https://pt.wikipedia.org/wiki/Voleibol"
@@ -345,26 +323,24 @@
 
         </section>
 
+        <!-- Família -->
+
         <section id="familia">
 
-            <h2>Minha família</h2>
+            <h2>Minha família </h2>
 
             <p>
-                Minha família faz parte de tudo na minha vida.
-                Aqui estão algumas fotos de pessoas muito especiais para mim.
+                Minha família é muito importante para mim!
+                Separei algumas fotos das pessoas que fazem parte da minha vida.
             </p>
 
             <h3>Meus pais</h3>
 
             <div class="fotos">
 
-                <img src="assets/WhatsApp Image 2026-05-22 at 10.07.24.jpeg"
-                     alt="Foto dos meus pais"
-                     loading="lazy">
+                <img src="assets/WhatsApp Image 2026-05-22 at 10.07.24.jpeg" alt="Meus pais">
 
-                <img src="assets/WhatsApp Image 2026-05-22 at 10.08.32.jpeg"
-                     alt="Foto dos meus pais"
-                     loading="lazy">
+                <img src="assets/WhatsApp Image 2026-05-22 at 10.08.32.jpeg" alt="Meus pais">
 
             </div>
 
@@ -372,17 +348,15 @@
 
             <div class="fotos">
 
-                <img src="assets/WhatsApp Image 2026-05-22 at 10.09.34.jpeg"
-                     alt="Foto do meu irmão"
-                     loading="lazy">
+                <img src="assets/WhatsApp Image 2026-05-22 at 10.09.34.jpeg" alt="Meu irmão">
 
-                <img src="assets/WhatsApp Image 2026-05-22 at 10.48.38.jpeg"
-                     alt="Foto do meu irmão"
-                     loading="lazy">
+                <img src="assets/WhatsApp Image 2026-05-22 at 10.48.38.jpeg" alt="Meu irmão">
 
             </div>
 
         </section>
+
+        <!-- Músicas -->
 
         <section>
 
@@ -390,11 +364,10 @@
 
             <div class="playlist">
 
-                <h3>Minha playlist</h3>
+                <h3>🎧 Minha playlist</h3>
 
                 <p>
-                    Gosto de ouvir música em vários momentos do dia.
-                    Separei algumas das minhas favoritas nesta playlist.
+                    Separei algumas das músicas que mais gosto de ouvir!
                 </p>
 
                 <a href="https://open.spotify.com/playlist/0IxykXnLslYgbj7XNwAtQ2?si=FN6ylQMcSXi8Y-nOjIKzIA"
@@ -408,28 +381,28 @@
 
         </section>
 
+        <!-- Escola -->
+
         <section>
 
             <h2>Matérias Tech favoritas</h2>
 
             <p>
-                Atualmente, estudo tecnologia e tenho aprendido bastante coisa nova.
-                Estas são algumas fotos relacionadas às matérias de que mais gosto.
+                Como estudo tecnologia, estou sempre aprendendo coisas novas.
+                Aqui estão algumas fotos das minhas matérias favoritas.
             </p>
 
             <div class="fotos">
 
-                <img src="assets/WhatsApp Image 2026-05-22 at 10.33.18.jpeg"
-                     alt="Foto de uma matéria de tecnologia"
-                     loading="lazy">
+                <img src="assets/WhatsApp Image 2026-05-22 at 10.33.18.jpeg" alt="Matéria Tech favorita">
 
-                <img src="assets/WhatsApp Image 2026-05-22 at 10.34.36.jpeg"
-                     alt="Foto de uma matéria de tecnologia"
-                     loading="lazy">
+                <img src="assets/WhatsApp Image 2026-05-22 at 10.34.36.jpeg" alt="Matéria Tech favorita">
 
             </div>
 
         </section>
+
+        <!-- Viagens -->
 
         <section id="viagens">
 
@@ -438,22 +411,19 @@
             <ul>
                 <li>Maceió</li>
                 <li>Santa Catarina</li>
-                <li>Beto Carrero, no meu aniversário de 10 anos</li>
+                <li>Beto Carrero no meu aniversário de 10 anos</li>
             </ul>
 
             <p>
-                Já conheci alguns lugares bem legais, mas tem uma coisa curiosa sobre mim:
-                não gosto muito de praia nem de entrar no mar.
-                Em uma das viagens, meus pais me convenceram a entrar e ainda acabei levando uma beliscada de um peixe.
+                Apesar de eu não gostar de praia e nem de mar,
+                meus pais me fizeram entrar no mar e até um peixe me beliscou.
             </p>
 
-            <h3>Maceió</h3>
+            <h3> Maceió</h3>
 
             <div class="fotos">
 
-                <img src="assets/WhatsApp Image 2026-05-22 at 08.41.54.jpeg"
-                     alt="Foto da viagem para Maceió"
-                     loading="lazy">
+                <img src="assets/WhatsApp Image 2026-05-22 at 08.41.54.jpeg" alt="Viagem para Maceió">
 
             </div>
 
@@ -464,13 +434,11 @@
                 Saiba mais sobre Maceió
             </a>
 
-            <h3>Santa Catarina</h3>
+            <h3>🌿 Santa Catarina</h3>
 
             <div class="fotos">
 
-                <img src="assets/WhatsApp Image 2026-05-22 at 08.44.45.jpeg"
-                     alt="Foto da viagem para Santa Catarina"
-                     loading="lazy">
+                <img src="assets/WhatsApp Image 2026-05-22 at 08.44.45.jpeg" alt="Viagem para Santa Catarina">
 
             </div>
 
@@ -483,25 +451,26 @@
 
         </section>
 
+        <!-- Lugares que quero conhecer -->
+
         <section>
 
             <h2>Lugares que quero conhecer</h2>
 
             <p>
-                Um dos lugares que tenho muita vontade de conhecer é a Itália.
-                Quero visitar Roma, conhecer a cidade e ver de perto o Coliseu.
+                Um dos lugares que mais tenho vontade de conhecer é a Itália!
+                Quero muito visitar Roma e conhecer o Coliseu.
             </p>
 
             <ul>
-                <li>Roma, Itália</li>
+                <li>Roma - Itália</li>
                 <li>Coliseu de Roma</li>
             </ul>
 
             <div class="fotos">
 
                 <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Colosseo_2020.jpg"
-                     alt="Coliseu de Roma"
-                     loading="lazy">
+                     alt="Coliseu de Roma">
 
             </div>
 
@@ -516,13 +485,16 @@
 
     </main>
 
+    <!-- Rodapé -->
+
     <footer>
 
-        <p>Feito por Victória Lago Brunini</p>
+        <p>Feito por Victória Lago Brunini </p>
+
         <p>© 2026 - Meu Portfólio Pessoal</p>
 
     </footer>
 
 </body>
 
-</html>
+</html> arrume aqui
